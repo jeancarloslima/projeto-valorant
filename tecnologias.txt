@@ -1,0 +1,9 @@
+REQUISIÇÃO: Axios
+CSS: CSS Modules
+ESTADO: Context
+COMPONENTES: React Aria
+----------------------------------------------------
+CÓDIGO: Typescript
+TESTE: tudo
+ANIMAÇÕES: Framer Motion
+ROTAS: React Router
