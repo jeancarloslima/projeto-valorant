@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://dash.valorant-api.com/",
+  baseURL: "https://valorant-api.com/v1/",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",

@@ -23,3 +23,13 @@ export interface Agent {
     abilities: Ability[];
     isPlayableCharacter: boolean;
 }
+
+export interface ValorantApiResponse {
+    status: number;
+    data: Agent[];
+}
+
+export interface ValorantApiSingleResponse {
+    status: number;
+    data: Agent;
+}
