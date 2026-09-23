@@ -1,11 +1,15 @@
+import { useEffect } from "react";
 import { useAgents } from "../../context/agents/AgentContext";
 
 export default function HomePage() {
-  const { agents, isLoading, error } = useAgents();
+  const { agents, isLoading, error, loadAgents } = useAgents();
 
-  console.log(agents);
-  
-  
+  useEffect(() => {
+    if (agents.length === 0) {
+      loadAgents();
+    }
+  }, [agents.length, loadAgents]);
+
   if (isLoading) return <p>Carregando agentes...</p>;
   if (error) return <p style={{ color: 'red' }}>Erro: {error}</p>;
 
