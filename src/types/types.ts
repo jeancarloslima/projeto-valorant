@@ -36,6 +36,9 @@ export interface ValorantApiSingleResponse {
 
 export interface AgentsContextType {
     agents: Agent[];
+    selectedAgent: Agent | null;
     isLoading: boolean;
     error: string | null;
+    loadAgents: () => Promise<void>;
+    getAgent: (uuid: string) => void;
 }

@@ -7,12 +7,12 @@ import { AgentsProvider } from "./context/agents/AgentProvider";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
-      <Routes>
-        <AgentsProvider>
+      <AgentsProvider>
+        <Routes>
           <Route path="/" element={<HomePage />} />
           {/* <Route path='/agent/:uuid' element={<AgentPage />} /> */}
-        </AgentsProvider>
-      </Routes>
+        </Routes>
+      </AgentsProvider>
     </BrowserRouter>
   </StrictMode>,
 );
