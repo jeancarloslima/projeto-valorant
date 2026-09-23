@@ -33,3 +33,9 @@ export interface ValorantApiSingleResponse {
     status: number;
     data: Agent;
 }
+
+export interface AgentsContextType {
+    agents: Agent[];
+    isLoading: boolean;
+    error: string | null;
+}
