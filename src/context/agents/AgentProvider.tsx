@@ -16,7 +16,6 @@ export const AgentsProvider = ({ children }: { children: ReactNode }) => {
     try {
       const data = await apiService.getAll();
       setAgents(data);
-      console.log(data);
     } catch (err) {
       setError('Erro ao carregar a lista de agentes do Valorant.');
     } finally {
