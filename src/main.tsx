@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import HomePage from "./components/HomePage";
 import { AgentsProvider } from "./context/agents/AgentProvider";
 import AgentPage from "./components/AgentPage";
+import "../src/index.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

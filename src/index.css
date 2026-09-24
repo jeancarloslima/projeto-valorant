@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Valorant";
+    src: url('../../assets/fonts/Valorant\ Font.ttf') format('ttf');
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0f1923; 
+  color: #ece8e1;
+  -webkit-font-smoothing: antialiased;
+}
