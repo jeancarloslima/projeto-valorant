@@ -1,7 +1,13 @@
+@font-face {
+    font-family: "Valorant";
+    src: url('../../assets/fonts/Valorant\ Font.ttf') format('ttf');
+}
+
 .container {
     padding: 2rem;
     max-width: 1100px;
     margin: 0 auto;
+    font-family: 'Valorant', sans-serif;
 }
 
 .gridList {
