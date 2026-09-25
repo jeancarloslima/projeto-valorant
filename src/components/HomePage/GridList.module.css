@@ -7,7 +7,7 @@
   flex-direction: column;
   gap: 32px;
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   font-family: "Valorant", sans-serif;
   color: #ece8e1;
@@ -64,6 +64,11 @@
   object-fit: cover;
   transform: scale(2.5);
   transform-origin: center 17%;
+  transition: .3s;
+}
+
+.card:hover .agentImage {
+  transform: scale(3);
 }
 
 .agentName {
