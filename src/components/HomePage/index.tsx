@@ -36,11 +36,13 @@ export default function HomePage() {
               id={agent.uuid}
             >
               <div className={styles.card}>
-                <img
-                  className={styles.agentImage}
-                  src={agent.fullPortrait}
-                  alt={`Retrato do ${agent.displayName}`}
-                />
+                <div className={styles.imageContainer}>
+                  <img
+                    className={styles.agentImage}
+                    src={agent.fullPortrait}
+                    alt={`Retrato do ${agent.displayName}`}
+                  />
+                </div>
                 <span className={styles.agentName}>{agent.displayName}</span>
               </div>
             </GridListItem>

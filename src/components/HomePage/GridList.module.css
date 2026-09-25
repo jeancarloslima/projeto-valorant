@@ -24,7 +24,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   list-style: none;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .card {
-  max-width: 320px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,11 +51,19 @@
   border-radius: 4px;
 }
 
-.agentImage {
+.imageContainer {
   width: 100%;
   height: 345px;
+  overflow: hidden; 
+  position: relative;
+}
+
+.agentImage {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  margin-bottom: 1rem;
+  transform: scale(2.5);
+  transform-origin: center 17%;
 }
 
 .agentName {
