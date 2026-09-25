@@ -38,7 +38,7 @@ export default function HomePage() {
               <div className={styles.card}>
                 <img
                   className={styles.agentImage}
-                  src={agent.displayIcon}
+                  src={agent.fullPortrait}
                   alt={`Retrato do ${agent.displayName}`}
                 />
                 <span className={styles.agentName}>{agent.displayName}</span>

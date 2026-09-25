@@ -16,6 +16,7 @@
 .pageTitle {
   font-size: 3.5rem;
   font-weight: 600;
+  margin-bottom: 2rem;
 }
 
 .gridList {
@@ -42,24 +43,28 @@
 }
 
 .card {
-  max-width: 400px;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ece8e1;
+  background-color: #19222D;
   border-radius: 4px;
-  padding: 1rem;
 }
 
 .agentImage {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 345px;
   object-fit: cover;
   margin-bottom: 1rem;
 }
 
 .agentName {
-  font-weight: bold;
+  width: 100%;
+  display: block;
+  padding: 1rem 0 1rem 1rem;
+  font-size: 18px;
+  font-weight: 900;
+  background-color: #ece8e1;
   color: #0e1823;
   text-transform: uppercase;
 }
