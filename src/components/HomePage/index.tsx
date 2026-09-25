@@ -20,7 +20,7 @@ export default function HomePage() {
   return (
     <main className={styles.content}>
       <div className={styles.container}>
-        <h2>AGENTES</h2>
+        <h2 className={styles.pageTitle}>AGENTES</h2>
 
         <GridList
           className={styles.gridList}
