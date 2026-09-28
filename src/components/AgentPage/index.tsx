@@ -11,25 +11,31 @@ export default function AgentPage() {
   }
 
   return (
-    <div>
-      <h1>{agent.displayName}</h1>
-      <img src={agent.fullPortrait} alt={agent.displayName} />
+    <div className={styles.container}>
+      <div className={styles.agentContainer}>
+        <div>
+          <img
+            className={styles.agentImage}
+            src={agent.fullPortrait}
+            alt={agent.displayName}
+          />
+        </div>
+        <div className={styles.agentInfoContainer}>
+          <h1 className={styles.agentName}>{agent.displayName}</h1>
+          <p className={styles.agentDescription}>{agent.description}</p>
 
-      <p>{agent.description}</p>
-
-      <h2>Habilidades</h2>
-      <ul>
-        {agent.abilities.map((ability, index) => (
-          <li key={index}>
+          <div className={styles.roleCard}>
             <img
-              src={ability.displayIcon}
-              width={30}
-              alt={ability.displayName}
+              src={agent.role.displayIcon}
+              alt={`Ícone de ${agent.role.displayName}`}
             />
-            <strong>{ability.displayName}:</strong> {ability.description}
-          </li>
-        ))}
-      </ul>
+            <span>FUNÇÃO</span>
+            <h3>{agent.role.displayName}</h3>
+          </div>
+        </div>
+      </div>
+
+      <div></div>
     </div>
   );
 }

@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: "Valorant", sans-serif;
+  color: #ece8e1;
+}
+
+.agentImage {
+    width: 100%;
+}
+
+.agentInfoContainer {
+    margin-top: 1rem;
+}
+
+.agentName {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.agentDescription {
+    margin: 1rem 0;
+    text-align: justify;
+    line-height: 1.8rem;
+}
+
+.roleCard {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem;
+    font-size: 10px;
+    border: 1px solid #ff4655;
+}
+
+.roleCard img {
+    width: 30%;
+    margin-bottom: 1rem;
+    background-color: #ff4655;
+    border-radius: 50%;
+}
+
+.roleCard h3 {
+    color: #ff4655;
+    font-weight: 600;
+}
