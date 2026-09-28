@@ -13,7 +13,7 @@ export default function AgentPage() {
   return (
     <div className={styles.container}>
       <div className={styles.agentContainer}>
-        <div>
+        <div className={styles.agentImageContainer}>
           <img
             className={styles.agentImage}
             src={agent.fullPortrait}
@@ -34,8 +34,6 @@ export default function AgentPage() {
           </div>
         </div>
       </div>
-
-      <div></div>
     </div>
   );
 }
