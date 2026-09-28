@@ -10,6 +10,7 @@
 }
 
 body {
+  font-family: 'Valorant', sans-serif;
   background-color: #0f1923; 
   color: #ece8e1;
   -webkit-font-smoothing: antialiased;

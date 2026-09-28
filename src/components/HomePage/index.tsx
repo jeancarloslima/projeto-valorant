@@ -14,20 +14,36 @@ export default function HomePage() {
     }
   }, [agents.length, loadAgents]);
 
-  if (isLoading) return <p style={{ color: "#ece8e1", textAlign: "center", fontSize: "2rem" }}>Carregando agentes...</p>;
-  if (error) return <p style={{ color: "#D55B6A", textAlign: "center", fontSize: "2rem" }}>Erro: {error}</p>;
+  if (isLoading)
+    return (
+      <p style={{ color: "#ece8e1", textAlign: "center", fontSize: "2rem" }}>
+        Carregando agentes...
+      </p>
+    );
+  if (error)
+    return (
+      <p style={{ color: "#D55B6A", textAlign: "center", fontSize: "2rem" }}>
+        Erro: {error}
+      </p>
+    );
 
   return (
     <main className={styles.content}>
       <div className={styles.container}>
-        <h2 className={styles.pageTitle}>AGENTES</h2>
+        <h1 className={styles.pageTitle}>AGENTES</h1>
 
         <GridList
           className={styles.gridList}
           items={agents}
           aria-label="Lista de agentes"
           selectionMode="single"
-          onAction={(key) => navigate(`/agent/${key}`)}
+          onAction={(key) => {
+            const selectedAgent = agents.find((agt) => agt.uuid === key);
+
+            if (selectedAgent) {
+              navigate(`/agent/${key}`, { state: { agent: selectedAgent } });
+            }
+          }}
         >
           {(agent) => (
             <GridListItem

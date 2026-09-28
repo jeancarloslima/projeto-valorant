@@ -29,11 +29,6 @@ export interface ValorantApiResponse {
     data: Agent[];
 }
 
-export interface ValorantApiSingleResponse {
-    status: number;
-    data: Agent;
-}
-
 export interface AgentsContextType {
     agents: Agent[];
     selectedAgent: Agent | null;
