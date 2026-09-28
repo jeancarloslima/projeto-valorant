@@ -14,8 +14,8 @@ export default function HomePage() {
     }
   }, [agents.length, loadAgents]);
 
-  if (isLoading) return <p>Carregando agentes...</p>;
-  if (error) return <p style={{ color: "red" }}>Erro: {error}</p>;
+  if (isLoading) return <p style={{ color: "#ece8e1", textAlign: "center", fontSize: "2rem" }}>Carregando agentes...</p>;
+  if (error) return <p style={{ color: "#D55B6A", textAlign: "center", fontSize: "2rem" }}>Erro: {error}</p>;
 
   return (
     <main className={styles.content}>
