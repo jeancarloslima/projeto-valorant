@@ -80,7 +80,7 @@
     display: flex;
     align-items: center;
     min-height: 850px;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
   }
 
@@ -94,10 +94,11 @@
 
   .agentImage {
     left: auto;
-    right: -20%;
+    right: -15%;
   }
 
   .agentInfoContainer {
     width: 50%;
+    max-width: 550px;
   }
 }
