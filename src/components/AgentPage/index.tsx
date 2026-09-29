@@ -39,21 +39,24 @@ export default function AgentPage() {
         </div>
       </section>
 
-      <section className={styles.abilitiesContainer}>
-        <h2 className={styles.titleAbilitiesContainer}>
-          HABILIDADES ESPECIAIS
-        </h2>
-        <ul className={styles.abilitiesList}>
-          {agent.abilities.map((abl) => (
-            <li className={styles.abilityItem}>
-              <img
-                className={styles.abilityIcon}
-                src={abl.displayIcon ? abl.displayIcon : ""}
-                alt={`Ícone da habilidade ${abl.displayName}`}
-              />
-            </li>
-          ))}
-        </ul>
+      <section className={styles.abilitiesSection}>
+        <div className={styles.abilitiesNameContainer}>
+          <h2 className={styles.titleAbilitiesContainer}>
+            HABILIDADES ESPECIAIS
+          </h2>
+          <ul className={styles.abilitiesList}>
+            {agent.abilities.map((abl) => (
+              <li className={styles.abilityItem}>
+                <img
+                  className={styles.abilityIcon}
+                  src={abl.displayIcon ? abl.displayIcon : ""}
+                  alt={`Ícone da habilidade ${abl.displayName}`}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <div className={styles.abilityInfoContainer}>
           <h3 className={styles.abilityTitle}>
             {agent.abilities[0].displayName}
