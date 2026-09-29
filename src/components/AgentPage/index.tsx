@@ -12,28 +12,30 @@ export default function AgentPage() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.agentContainer}>
-        <div className={styles.agentImageContainer}>
-          <img
-            className={styles.agentImage}
-            src={agent.fullPortrait}
-            alt={agent.displayName}
-          />
-        </div>
-        <div className={styles.agentInfoContainer}>
-          <h1 className={styles.agentName}>{agent.displayName}</h1>
-          <p className={styles.agentDescription}>{agent.description}</p>
-
-          <div className={styles.roleCard}>
+      <section className={styles.agentSection}>
+        <div className={styles.agentContainer}>
+          <div className={styles.agentImageContainer}>
             <img
-              src={agent.role.displayIcon}
-              alt={`Ícone de ${agent.role.displayName}`}
+              className={styles.agentImage}
+              src={agent.fullPortrait}
+              alt={agent.displayName}
             />
-            <span>FUNÇÃO</span>
-            <h3>{agent.role.displayName}</h3>
+          </div>
+          <div className={styles.agentInfoContainer}>
+            <h1 className={styles.agentName}>{agent.displayName}</h1>
+            <p className={styles.agentDescription}>{agent.description}</p>
+
+            <div className={styles.roleCard}>
+              <img
+                src={agent.role.displayIcon}
+                alt={`Ícone de ${agent.role.displayName}`}
+              />
+              <span>FUNÇÃO</span>
+              <h3>{agent.role.displayName}</h3>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

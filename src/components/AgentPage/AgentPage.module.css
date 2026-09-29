@@ -3,22 +3,30 @@
   flex-direction: column;
   gap: 32px;
   padding-bottom: 2rem;
-  max-width: 1400px;
   margin: 0 auto;
   color: #ece8e1;
 }
 
+.agentSection {
+  background: linear-gradient(#1b252d, #090d0f);
+  z-index: -2;
+}
+
+.agentContainer {
+  position: relative;
+}
+
 .agentImageContainer {
-  display: flex;
-  justify-content: center;
   width: 100%;
   height: 35dvw;
-  background: linear-gradient(#1b252d, #090d0f);
+  position: relative;
   overflow: hidden;
 }
 
 .agentImage {
   height: 100%;
+  position: absolute;
+  left: 40%;
   padding-left: 2rem;
   transform: scale(1.3);
   object-fit: cover;
@@ -61,4 +69,35 @@
 .roleCard h3 {
   color: #ff4655;
   font-weight: 600;
+}
+
+@media screen and (min-width: 1024px) {
+  .agentSection {
+    background: linear-gradient(to left, #1b252d, #090d0f);
+  }
+
+  .agentContainer {
+    display: flex;
+    align-items: center;
+    min-height: 850px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .agentImageContainer {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  .agentImage {
+    left: auto;
+    right: -20%;
+  }
+
+  .agentInfoContainer {
+    width: 50%;
+  }
 }
