@@ -79,6 +79,46 @@
   background-color: #ff4655;
 }
 
+.abilitiesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.titleAbilitiesContainer {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.abilitiesList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.abilityItem {
+  width: 12dvw;
+  max-width: 100px;
+}
+
+.abilityIcon {
+  width: 100%;
+}
+
+.abilityInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.abilityDescription {
+  font-size: .8rem;
+}
+
 @media screen and (min-width: 1024px) {
   .agentSection {
     background: linear-gradient(to left, #1b252d, #090d0f);
