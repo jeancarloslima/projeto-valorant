@@ -33,6 +33,8 @@ export default function AgentPage() {
               <span>FUNÇÃO</span>
               <h3>{agent.role.displayName}</h3>
             </div>
+
+            <span className={styles.horizontalRow}></span>
           </div>
         </div>
       </section>
