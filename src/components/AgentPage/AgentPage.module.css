@@ -162,12 +162,15 @@
   }
 
   .agentImage {
+    padding: 0;
     left: auto;
-    right: -15%;
+    right: -8%;
+    top: 10%;
+    transform: scale(1.2);
   }
 
   .agentInfoContainer {
-    width: 50%;
+    width: 40%;
     max-width: 550px;
   }
 
