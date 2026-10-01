@@ -40,6 +40,7 @@ export default function AgentPage() {
       </section>
 
       <section className={styles.abilitiesSection}>
+        <img className={styles.abilitiesSectionBackgroundImage} src={agent.role.displayIcon} />
         <div className={styles.abilitiesNameContainer}>
           <h2 className={styles.titleAbilitiesContainer}>
             HABILIDADES ESPECIAIS

@@ -87,7 +87,18 @@
   gap: 2rem;
   padding: 2rem;
   margin: 0 auto;
+  position: relative;
   max-width: 1300px;
+}
+
+.abilitiesSectionBackgroundImage {
+  width: 30%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .2;
+  z-index: -20;
 }
 
 .abilitiesNameContainer {
