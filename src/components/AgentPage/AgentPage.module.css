@@ -94,13 +94,15 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
 }
 
 .titleAbilitiesContainer {
-  font-size: 1.5rem;
+  font-size: min(10dvw, 55px);
   font-weight: 600;
   text-align: center;
+  letter-spacing: 0.64px;
 }
 
 .abilitiesList {
@@ -113,7 +115,7 @@
 
 .abilityItem {
   width: 12dvw;
-  max-width: 100px;
+  max-width: 80px;
 }
 
 .abilityIcon {
@@ -183,6 +185,20 @@
   }
 
   .abilitiesSection {
+    min-height: 650px;
     flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .abilitiesNameContainer {
+    gap: 3rem;
+  }
+
+  .titleAbilitiesContainer {
+    font-size: 60px;
+  }
+
+  .abilityItem {
+    max-width: 100px;
   }
 }
