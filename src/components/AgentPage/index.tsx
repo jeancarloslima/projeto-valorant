@@ -58,6 +58,7 @@ export default function AgentPage() {
         </div>
 
         <div className={styles.abilityInfoContainer}>
+          <img className={styles.abilityVideoImage} src="/the-range-valorant-guide-shooting.avif" alt={`Vídeo da habilidade ${agent.abilities[0].displayName}`} />
           <h3 className={styles.abilityTitle}>
             {agent.abilities[0].displayName}
           </h3>

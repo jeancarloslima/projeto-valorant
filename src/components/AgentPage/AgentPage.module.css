@@ -137,8 +137,20 @@
   text-align: center;
 }
 
+.abilityVideoImage {
+  width: 100%;
+}
+
+.abilityTitle {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: .6px;
+  margin-top: .5rem;
+}
+
 .abilityDescription {
   font-size: 0.8rem;
+  line-height: 1.5rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -188,6 +200,7 @@
     min-height: 650px;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
 
   .abilitiesNameContainer {
