@@ -3,6 +3,7 @@ import { useAgents } from "../../context/agents/AgentContext";
 import { GridList, GridListItem } from "react-aria-components";
 import styles from "./GridList.module.css";
 import { useNavigate } from "react-router";
+import Header from "../assets/Header";
 
 export default function HomePage() {
   const { agents, isLoading, error, loadAgents } = useAgents();
@@ -28,43 +29,47 @@ export default function HomePage() {
     );
 
   return (
-    <main className={styles.content}>
-      <div className={styles.container}>
-        <h1 className={styles.pageTitle}>AGENTES</h1>
+    <>
+      <Header />
 
-        <GridList
-          className={styles.gridList}
-          items={agents}
-          aria-label="Lista de agentes"
-          selectionMode="single"
-          onAction={(key) => {
-            const selectedAgent = agents.find((agt) => agt.uuid === key);
+      <main className={styles.content}>
+        <div className={styles.container}>
+          <h1 className={styles.pageTitle}>AGENTES</h1>
 
-            if (selectedAgent) {
-              navigate(`/agent/${key}`, { state: { agent: selectedAgent } });
-            }
-          }}
-        >
-          {(agent) => (
-            <GridListItem
-              className={styles.gridItem}
-              textValue={agent.displayName}
-              id={agent.uuid}
-            >
-              <div className={styles.card}>
-                <div className={styles.imageContainer}>
-                  <img
-                    className={styles.agentImage}
-                    src={agent.fullPortrait}
-                    alt={`Retrato do ${agent.displayName}`}
-                  />
+          <GridList
+            className={styles.gridList}
+            items={agents}
+            aria-label="Lista de agentes"
+            selectionMode="single"
+            onAction={(key) => {
+              const selectedAgent = agents.find((agt) => agt.uuid === key);
+
+              if (selectedAgent) {
+                navigate(`/agent/${key}`, { state: { agent: selectedAgent } });
+              }
+            }}
+          >
+            {(agent) => (
+              <GridListItem
+                className={styles.gridItem}
+                textValue={agent.displayName}
+                id={agent.uuid}
+              >
+                <div className={styles.card}>
+                  <div className={styles.imageContainer}>
+                    <img
+                      className={styles.agentImage}
+                      src={agent.fullPortrait}
+                      alt={`Retrato do ${agent.displayName}`}
+                    />
+                  </div>
+                  <span className={styles.agentName}>{agent.displayName}</span>
                 </div>
-                <span className={styles.agentName}>{agent.displayName}</span>
-              </div>
-            </GridListItem>
-          )}
-        </GridList>
-      </div>
-    </main>
+              </GridListItem>
+            )}
+          </GridList>
+        </div>
+      </main>
+    </>
   );
 }
