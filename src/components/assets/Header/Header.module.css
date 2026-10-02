@@ -1,0 +1,40 @@
+.headerContainer {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.headerContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: black;
+}
+
+.headerContainer * {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.headerList {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+.headerList li {
+    font-weight: 700;
+}
+
+.headerButton {
+    background: linear-gradient(to right, #FF3A45, #FF7562);
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 1rem;
+    outline: none;
+    font-family: 'Valorant', sans-serif;
+    font-weight: 700;
+}

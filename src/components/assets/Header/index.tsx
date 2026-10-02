@@ -1,8 +1,10 @@
+import styles from "./Header.module.css";
+
 export default function Header() {
     return (
-        <div>
-            <div>
-                <ul>
+        <div className={styles.headerContainer}>
+            <div className={styles.headerContent}>
+                <ul className={styles.headerList}>
                     <li>
                         <img src="" alt="" />
                     </li>
@@ -11,7 +13,7 @@ export default function Header() {
                         <img src="" alt="" />
                     </li>
 
-                    <li>INFORMAÇÕE DO JOGO</li>
+                    <li>INFORMAÇÕES DO JOGO</li>
                     <li>MÍDIA</li>
                     <li>NOTÍCIAS</li>
                     <li>SUPORTE</li>
@@ -27,7 +29,7 @@ export default function Header() {
                     <a href="#">
                         <img src="" alt="" />
                     </a>
-                    <button>Jogue agora</button>
+                    <button className={styles.headerButton}>Jogue agora</button>
                 </div>
             </div>
         </div>
