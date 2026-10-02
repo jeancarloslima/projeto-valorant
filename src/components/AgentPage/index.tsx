@@ -1,6 +1,7 @@
 import styles from "./AgentPage.module.css";
 import { Navigate, useLocation } from "react-router";
 import type { Agent } from "../../types/types";
+import Header from "../assets/Header";
 
 export default function AgentPage() {
   const location = useLocation();
@@ -12,6 +13,8 @@ export default function AgentPage() {
 
   return (
     <div className={styles.container}>
+      <Header />
+
       <section className={styles.agentSection}>
         <div className={styles.agentContainer}>
           <div className={styles.agentImageContainer}>
