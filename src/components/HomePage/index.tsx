@@ -4,6 +4,7 @@ import { GridList, GridListItem } from "react-aria-components";
 import styles from "./GridList.module.css";
 import { useNavigate } from "react-router";
 import Header from "../assets/Header";
+import { motion } from "framer-motion";
 
 export default function HomePage() {
   const { agents, isLoading, error, loadAgents } = useAgents();

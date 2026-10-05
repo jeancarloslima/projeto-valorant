@@ -2,6 +2,7 @@ import styles from "./AgentPage.module.css";
 import { Navigate, useLocation } from "react-router";
 import type { Agent } from "../../types/types";
 import Header from "../assets/Header";
+import { motion } from "framer-motion";
 
 export default function AgentPage() {
   const location = useLocation();
@@ -12,7 +13,12 @@ export default function AgentPage() {
   }
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className={styles.container}
+    >
       <Header />
 
       <section className={styles.agentSection}>
@@ -43,7 +49,10 @@ export default function AgentPage() {
       </section>
 
       <section className={styles.abilitiesSection}>
-        <img className={styles.abilitiesSectionBackgroundImage} src={agent.role.displayIcon} />
+        <img
+          className={styles.abilitiesSectionBackgroundImage}
+          src={agent.role.displayIcon}
+        />
         <div className={styles.abilitiesNameContainer}>
           <h2 className={styles.titleAbilitiesContainer}>
             HABILIDADES ESPECIAIS
@@ -62,7 +71,11 @@ export default function AgentPage() {
         </div>
 
         <div className={styles.abilityInfoContainer}>
-          <img className={styles.abilityVideoImage} src="/the-range-valorant-guide-shooting.avif" alt={`Vídeo da habilidade ${agent.abilities[0].displayName}`} />
+          <img
+            className={styles.abilityVideoImage}
+            src="/the-range-valorant-guide-shooting.avif"
+            alt={`Vídeo da habilidade ${agent.abilities[0].displayName}`}
+          />
           <h3 className={styles.abilityTitle}>
             {agent.abilities[0].displayName}
           </h3>
@@ -71,6 +84,6 @@ export default function AgentPage() {
           </p>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }
