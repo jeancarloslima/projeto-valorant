@@ -1,38 +1,46 @@
+import styles from "./Footer.module.css";
+
 export default function Footer() {
   return (
-    <div>
-      <h2>BAIXE O APLICATIVO DE CELULAR RIOT MOBILE</h2>
+    <div className={styles.footerContainer}>
+      <div className={styles.footerTitle}>
+        <a>
+          BAIXE O APLICATIVO DE CELULAR RIOT MOBILE
+        </a>
+      </div>
 
-      <div>
+      <div className={styles.footerInfoContainer}>
         <ul>
-            <li>
-                <a href="#">
-                    <img src="" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="" alt="" />
-                </a>
-            </li>
+          <li>
+            <a href="#">
+              <img src="" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="" alt="" />
+            </a>
+          </li>
         </ul>
 
-        <img src="" alt="" />
+        <a href="#">
+            <img src="" alt="" />
+        </a>
 
         <p>
           2020-2026 Riot Games, Inc, RIOT GAMES, VALORANT e todos os logotipos
@@ -40,16 +48,16 @@ export default function Footer() {
           registradas da Riot Games, Inc.
         </p>
 
-        <ul>
-            <li>
-                <a href="#">POLÍTICA DE PRIVACIDADE</a>
-            </li>
-            <li>
-                <a href="#">TERMOS DE SERVIÇO</a>
-            </li>
-            <li>
-                <a href="#">PREFERÊNCIAS DE COOKIES</a>
-            </li>
+        <ul className={styles.footerContractsList}>
+          <li>
+            <a href="#">POLÍTICA DE PRIVACIDADE</a>
+          </li>
+          <li>
+            <a href="#">TERMOS DE SERVIÇO</a>
+          </li>
+          <li>
+            <a href="#">PREFERÊNCIAS DE COOKIES</a>
+          </li>
         </ul>
 
         <img src="" alt="Classificação indicativa: 14 anos" />

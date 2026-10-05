@@ -15,3 +15,7 @@ body {
   color: #ece8e1;
   -webkit-font-smoothing: antialiased;
 }
+
+ul {
+  list-style: none;
+}

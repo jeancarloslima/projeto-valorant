@@ -1,0 +1,46 @@
+a {
+  padding: 0.5rem 1rem;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+a:hover {
+  background-color: #494848;
+  cursor: pointer;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: #000;
+  padding-bottom: 3rem;
+}
+
+.footerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0.5rem;
+  background-color: #292929;
+  text-align: center;
+}
+
+.footerInfoContainer {
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+.footerContractsList {
+  display: flex;
+  gap: 1rem;
+}
