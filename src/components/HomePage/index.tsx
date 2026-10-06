@@ -9,6 +9,7 @@ import Footer from "../assets/Footer";
 export default function HomePage() {
   const { agents, isLoading, error, loadAgents } = useAgents();
   const navigate = useNavigate();
+  const sortedAgents = [...agents].sort((a, b) => a.displayName.localeCompare(b.displayName, 'pt-BR'));
 
   useEffect(() => {
     if (agents.length === 0) {
@@ -39,7 +40,7 @@ export default function HomePage() {
 
           <GridList
             className={styles.gridList}
-            items={agents}
+            items={sortedAgents}
             aria-label="Lista de agentes"
             selectionMode="single"
             onAction={(key) => {
