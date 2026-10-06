@@ -87,6 +87,10 @@
 }
 
 @media screen and (min-width: 900px) {
+  .container {
+    padding-top: 5rem;
+  }
+
   .pageTitle {
     font-size: 3.5rem;
   }
