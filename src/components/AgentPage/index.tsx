@@ -3,6 +3,7 @@ import { Navigate, useLocation } from "react-router";
 import type { Agent } from "../../types/types";
 import Header from "../assets/Header";
 import { motion } from "framer-motion";
+import Footer from "../assets/Footer";
 
 export default function AgentPage() {
   const location = useLocation();
@@ -84,6 +85,8 @@ export default function AgentPage() {
           </p>
         </div>
       </section>
+
+      <Footer />
     </motion.div>
   );
 }
