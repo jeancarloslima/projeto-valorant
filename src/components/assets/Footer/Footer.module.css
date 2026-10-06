@@ -29,7 +29,7 @@
 }
 
 .footerInfoContainer {
-  max-width: 690px;
+  max-width: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,11 +77,30 @@
 
 .footerContractsList {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  text-align: center;
+  gap: 2rem;
 }
 
 .footerIndicativeRatingLink {
   padding: .8rem;
   background-color: #292929;
   border-radius: 8px;
+}
+
+@media screen and (min-width: 500px) {
+  .footerInfoContainer {
+    max-width: 490px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .footerInfoContainer {
+    max-width: 690px;
+  }
+
+  .footerContractsList {
+    flex-direction: row;
+    gap: 1rem;
+  }
 }
