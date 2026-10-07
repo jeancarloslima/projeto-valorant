@@ -48,24 +48,27 @@
 
 .roleCard {
   width: 140px;
+  font-size: 10px;
+  border: 1px solid #ff4655;
+}
+
+.roleCardContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
   padding: 1rem;
-  font-size: 10px;
-  border: 1px solid #ff4655;
 }
 
-.roleCard img {
+.roleCardContainer img {
   width: 30%;
   margin-bottom: 1rem;
   background-color: #ff4655;
   border-radius: 50%;
 }
 
-.roleCard h3 {
+.roleCardContainer h3 {
   color: #ff4655;
   font-weight: 600;
 }
@@ -95,7 +98,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  opacity: .2;
+  opacity: 0.2;
   z-index: -20;
 }
 
@@ -153,8 +156,8 @@
 .abilityTitle {
   font-size: 1.7rem;
   font-weight: 700;
-  letter-spacing: .6px;
-  margin-top: .5rem;
+  letter-spacing: 0.6px;
+  margin-top: 0.5rem;
 }
 
 .abilityDescription {
@@ -192,6 +195,10 @@
     transform: scale(1.2);
   }
 
+  .agentName {
+    font-size: 3rem;
+  }
+
   .agentInfoContainer {
     width: 40%;
     max-width: 550px;
@@ -199,6 +206,12 @@
 
   .roleCard {
     margin-top: 3rem;
+    padding: .5rem;
+  }
+
+  .roleCardContainer {
+    padding: .5rem;
+    background-color: #0D161D;
   }
 
   .horizontalRow {

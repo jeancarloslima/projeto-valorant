@@ -17,35 +17,44 @@ export default function AgentPage() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
       className={styles.container}
     >
       <Header />
 
       <section className={styles.agentSection}>
         <div className={styles.agentContainer}>
-          <div className={styles.agentImageContainer}>
+          <motion.div
+            initial={{ x: 100 }}
+            animate={{ x: 0 }}
+            className={styles.agentImageContainer}
+          >
             <img
               className={styles.agentImage}
               src={agent.fullPortrait}
               alt={agent.displayName}
             />
-          </div>
-          <div className={styles.agentInfoContainer}>
+          </motion.div>
+          <motion.div
+            initial={{ x: -100 }}
+            animate={{ x: 0 }}
+            className={styles.agentInfoContainer}
+          >
             <h1 className={styles.agentName}>{agent.displayName}</h1>
             <p className={styles.agentDescription}>{agent.description}</p>
 
             <div className={styles.roleCard}>
-              <img
-                src={agent.role.displayIcon}
-                alt={`Ícone de ${agent.role.displayName}`}
-              />
-              <span>FUNÇÃO</span>
-              <h3>{agent.role.displayName}</h3>
+              <div className={styles.roleCardContainer}>
+                <img
+                  src={agent.role.displayIcon}
+                  alt={`Ícone de ${agent.role.displayName}`}
+                />
+                <span>FUNÇÃO</span>
+                <h3>{agent.role.displayName}</h3>
+              </div>
             </div>
 
             <span className={styles.horizontalRow}></span>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -54,7 +63,8 @@ export default function AgentPage() {
           className={styles.abilitiesSectionBackgroundImage}
           src={agent.role.displayIcon}
         />
-        <div className={styles.abilitiesNameContainer}>
+        <motion.div initial={{ x: -100 }}
+            animate={{ x: 0 }} className={styles.abilitiesNameContainer}>
           <h2 className={styles.titleAbilitiesContainer}>
             HABILIDADES ESPECIAIS
           </h2>
@@ -69,9 +79,13 @@ export default function AgentPage() {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
 
-        <div className={styles.abilityInfoContainer}>
+        <motion.div
+          initial={{ x: 100 }}
+          animate={{ x: 0 }}
+          className={styles.abilityInfoContainer}
+        >
           <img
             className={styles.abilityVideoImage}
             src="/the-range-valorant-guide-shooting.avif"
@@ -83,7 +97,7 @@ export default function AgentPage() {
           <p className={styles.abilityDescription}>
             {agent.abilities[0].description}
           </p>
-        </div>
+        </motion.div>
       </section>
 
       <Footer />
