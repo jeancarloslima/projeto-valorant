@@ -10,8 +10,74 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1.5rem 2rem;
-    background-color: black;
+    background-color: #111111;
+}
+
+.headerLogos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.headerRiotLink {
+    display: block;
+    width: 120px;
+}
+
+.headerValorantLink {
+    display: block;
+    width: 35px;
+}
+
+.headerRiotLink img,
+.headerValorantLink img {
+    width: 100%;
+}
+
+.headerLinks {
+    display: flex;
+}
+
+.menuHamburguerLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.4rem .9rem;
+    border-radius: 18px;
+    background-color: #272727;
+    cursor: pointer;
+}
+
+.menuHamburguerBar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: #E8E8E8;
+}
+
+.menuHamburguerBar::after {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: #E8E8E8;
+    transform: translateY(-7px);
+}
+
+.menuHamburguerBar::before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: #E8E8E8;
+    transform: translateY(5px);
+}
+
+.headerLinksContainer {
+    display: none;
 }
 
 .headerContainer * {
@@ -38,4 +104,14 @@
     outline: none;
     font-family: 'Valorant', sans-serif;
     font-weight: 700;
+}
+
+@media screen and (min-width: 1024px) {
+    .menuHamburguer {
+        display: none;
+    }
+
+  .headerLinksContainer {
+    display: flex;
+  }
 }

@@ -41,7 +41,7 @@ export default function Footer() {
         </ul>
 
         <a href="#" className={styles.footerLogo}>
-          <img src="/riot-games-seeklogo.svg" alt="Logo Riot Games" />
+          <img src="/riot-games-seeklogo-gray.svg" alt="Logo Riot Games" />
         </a>
 
         <p className={styles.copyText}>
