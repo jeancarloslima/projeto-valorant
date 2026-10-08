@@ -1,115 +1,194 @@
 .headerContainer {
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    overflow: hidden;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
 .headerContent {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    background-color: #111111;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  background-color: #111111;
+}
+
+.headerContainer * {
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .headerLogos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .headerRiotLink {
-    display: block;
-    width: 120px;
+  display: block;
+  width: 90px;
 }
 
 .headerValorantLink {
-    display: block;
-    width: 35px;
+  display: block;
+  width: 35px;
 }
 
 .headerRiotLink img,
 .headerValorantLink img {
-    width: 100%;
+  width: 100%;
 }
 
 .headerLinks {
-    display: flex;
+  display: flex;
 }
 
-.menuHamburguerLogo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.4rem .9rem;
-    border-radius: 18px;
-    background-color: #272727;
-    cursor: pointer;
+.menuHamburguerButton {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border-radius: 18px;
+  border-color: transparent;
+  background-color: #272727;
+  cursor: pointer;
 }
 
 .menuHamburguerBar {
-    display: block;
-    width: 18px;
-    height: 2px;
-    background-color: #E8E8E8;
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: #e8e8e8;
 }
 
 .menuHamburguerBar::after {
-    content: '';
-    display: block;
-    width: 18px;
-    height: 2px;
-    background-color: #E8E8E8;
-    transform: translateY(-7px);
+  content: "";
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: #e8e8e8;
+  transform: translateY(-7px);
 }
 
 .menuHamburguerBar::before {
-    content: '';
-    display: block;
-    width: 18px;
-    height: 2px;
-    background-color: #E8E8E8;
-    transform: translateY(5px);
+  content: "";
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: #e8e8e8;
+  transform: translateY(5px);
 }
 
 .headerLinksContainer {
-    display: none;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  padding: 1.5rem;
+  left: 0;
+  top: 0;
+  background-color: #1f1f1f;
 }
 
-.headerContainer * {
-    text-transform: uppercase;
-    font-size: 14px;
+.menuOpen {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 10;
+}
+
+.menuHeaderTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menuHeaderTop img {
+  width: 35px;
+}
+
+.closeButton {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border-radius: 18px;
+  border-color: transparent;
+  background-color: #272727;
+  cursor: pointer;
+}
+
+.searchInput {
+  width: 100%;
 }
 
 .headerList {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .headerList li {
-    font-weight: 700;
+  display: flex;
+  align-items: center;
+  padding: 12px 1rem;
+  border-radius: 8px;
+}
+
+.headerList li:hover {
+    background-color: #272727;
+}
+
+.headerList li a {
+  width: 100%;
+  height: 24px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1.5px;
+}
+
+.headerList li:hover a {
+  color: #ff4655;
 }
 
 .headerButton {
-    background: linear-gradient(to right, #FF3A45, #FF7562);
-    padding: .5rem 1rem;
-    border: none;
-    border-radius: 1rem;
-    outline: none;
-    font-family: 'Valorant', sans-serif;
-    font-weight: 700;
+  width: 100%;
+  height: 40px;
+  background-color: #ff4655;
+  /* background: linear-gradient(to right, #ff3a45, #ff7562); */
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  font-family: "Valorant", sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+@media screen and (min-width: 640px) {
+  .headerContent {
+    padding: 1.5rem 2rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    .menuHamburguer {
-        display: none;
-    }
+  .headerRiotLink {
+    width: 80px;
+  }
+
+  .menuHamburguer {
+    display: none;
+  }
 
   .headerLinksContainer {
     display: flex;

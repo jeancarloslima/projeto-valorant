@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding: 2rem;
+  padding: 1.5rem;
   max-width: 1400px;
   margin: 0 auto;
   color: #ece8e1;
@@ -16,6 +16,7 @@
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .gridList {
@@ -28,7 +29,6 @@
 }
 
 .gridItem {
-  width: 100%;
   cursor: pointer;
   outline: none;
 }
@@ -74,10 +74,15 @@
 }
 
 @media screen and (min-width: 500px) {
+  .container {
+    padding: 2rem;
+  }
+
   .pageTitle {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 2rem;
+    text-align: left;
   }
 
   .gridList {
