@@ -41,10 +41,6 @@
   width: 100%;
 }
 
-.headerLinks {
-  display: flex;
-}
-
 .menuHamburguerButton {
   width: 50px;
   height: 50px;
@@ -91,13 +87,13 @@
   width: 100vw;
   max-width: 500px;
   min-height: 100dvh;
-  position: fixed; 
+  position: fixed;
   padding: 1rem 1.5rem;
   right: 0;
   top: 0;
   background-color: #1f1f1f;
   overflow-y: auto;
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5); 
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .menuHeaderTop {
@@ -127,8 +123,12 @@
 .searchInput {
   width: 100%;
   height: 40px;
-  background-color: #272727;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
   border-radius: 1rem;
+  background-color: #272727;
+  outline: none;
 }
 
 .headerList {
@@ -187,6 +187,8 @@
 @media screen and (min-width: 1024px) {
   .headerContent {
     justify-content: flex-start;
+    padding: 0 2rem;
+    border-bottom: 2px solid #191919;
   }
 
   .headerRiotLink {
@@ -197,13 +199,20 @@
     display: none;
   }
 
+  .headerLinks {
+    width: 100%;
+  }
+
   .headerLinksContainer {
-    width: auto;
+    width: 100%;
     height: auto;
     max-width: none;
     min-height: auto;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    gap: 8px;
     position: static;
     background-color: transparent;
     overflow: hidden;
@@ -213,22 +222,51 @@
     display: none;
   }
 
+  .searchInput {
+    width: 60px;
+    height: 50px;
+    justify-content: center;
+    border-color: transparent;
+    order: 1;
+    cursor: pointer;
+  }
+
   .headerList {
     flex-direction: row;
+    gap: 6px;
   }
 
   .headerList li {
     width: auto;
     height: 100%;
+    position: relative;
   }
 
   .headerList li a {
     width: auto;
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
+
+  .headerList li a span {
+    display: none;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    background-color: #ff3a45;
+  }
+
+  .headerList li:hover a span {
+    display: inline;
   }
 
   .headerButton {
-    width: 140px;
+    width: 215px;
     height: 32px;
+    line-height: 16px;
+    order: 2;
     background: linear-gradient(to right, #ff3a45, #ff7562);
   }
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./Header.module.css";
 import { FaXmark } from "react-icons/fa6";
+import { FaSearch } from "react-icons/fa";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,6 +11,10 @@ export default function Header() {
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 1024);
+
+      if (window.innerWidth >= 1024) {
+        setIsMenuOpen(true);
+      }
     };
 
     handleResize();
@@ -46,7 +51,7 @@ export default function Header() {
             {isMenuOpen && (
               <motion.div
                 className={styles.headerLinksContainer}
-                initial={{ x: "100%" }}
+                initial={ isDesktop ? '' : { x: "100%" }}
                 animate={{ x: 0 }}
                 exit={{ x: "100%" }}
                 transition={{ type: "spring", bounce: 0, duration: 0.4 }}
@@ -61,29 +66,34 @@ export default function Header() {
                   </button>
                 </div>
 
-                <div className={styles.searchInput}></div>
+                <div className={styles.searchInput}>
+                  <FaSearch size={20} />
+                </div>
 
                 <ul className={styles.headerList}>
                   <li>
-                    <a href="#">INFORMAÇÕES DO JOGO</a>
+                    <a href="#">
+                      <p>INFORMAÇÕES DO JOGO</p>
+                      <span></span>
+                    </a>
                   </li>
                   <li>
-                    <a href="#">MÍDIA</a>
+                    <a href="#">
+                      <p>MÍDIA</p>
+                      <span></span>
+                    </a>
                   </li>
                   <li>
-                    <a href="#">NOTÍCIAS</a>
+                    <a href="#">
+                      <p>NOTÍCIAS</p>
+                      <span></span>
+                    </a>
                   </li>
                   <li>
-                    <a href="#">SUPORTE</a>
-                  </li>
-                  <li>
-                    <a href="#">SOCIAL</a>
-                  </li>
-                  <li>
-                    <a href="#">ESPORTS</a>
-                  </li>
-                  <li>
-                    <a href="#">MAIS</a>
+                    <a href="#">
+                      <p>MAIS</p>
+                      <span></span>
+                    </a>
                   </li>
                 </ul>
 
