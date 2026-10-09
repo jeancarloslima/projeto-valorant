@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import styles from "./Header.module.css";
 import { FaXmark } from "react-icons/fa6";
 
@@ -42,65 +42,55 @@ export default function Header() {
             </button>
           </div>
 
-          <motion.div
-            initial={
-              isDesktop ? { opacity: 1, x: 100 } : { opacity: 1, x: 100 }
-            }
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3 }}
-            className={`${styles.headerLinksContainer} ${isMenuOpen ? styles.menuOpen : ""}`}
-          >
-            <div className={styles.menuHeaderTop}>
-              <img src="/valorant-logo.svg" alt="Logo Valorant" />
-
-              <button
-                onClick={() => setIsMenuOpen(false)}
-                className={styles.closeButton}
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                className={styles.headerLinksContainer}
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "spring", bounce: 0, duration: 0.4 }}
               >
-                <FaXmark color="#FFF" size={24} />
-              </button>
-            </div>
+                <div className={styles.menuHeaderTop}>
+                  <img src="/valorant-logo.svg" alt="Logo Valorant" />
+                  <button
+                    onClick={() => setIsMenuOpen(false)}
+                    className={styles.closeButton}
+                  >
+                    <FaXmark color="#FFF" size={24} />
+                  </button>
+                </div>
 
-            <div className={styles.searchInput}></div>
+                <div className={styles.searchInput}></div>
 
-            <ul className={styles.headerList}>
-              <li>
-                <a href="#">INFORMAÇÕES DO JOGO</a>
-              </li>
-              <li>
-                <a href="#">MÍDIA</a>
-              </li>
-              <li>
-                <a href="#">NOTÍCIAS</a>
-              </li>
-              <li>
-                <a href="#">SUPORTE</a>
-              </li>
-              <li>
-                <a href="#">SOCIAL</a>
-              </li>
-              <li>
-                <a href="#">ESPORTS</a>
-              </li>
-              <li>
-                <a href="#">COMUNIDADE</a>
-              </li>
-              <li>
-                <a href="#">DUELO: ASCENSÃO</a>
-              </li>
-              <li>
-                <a href="#">MAIS</a>
-              </li>
-            </ul>
+                <ul className={styles.headerList}>
+                  <li>
+                    <a href="#">INFORMAÇÕES DO JOGO</a>
+                  </li>
+                  <li>
+                    <a href="#">MÍDIA</a>
+                  </li>
+                  <li>
+                    <a href="#">NOTÍCIAS</a>
+                  </li>
+                  <li>
+                    <a href="#">SUPORTE</a>
+                  </li>
+                  <li>
+                    <a href="#">SOCIAL</a>
+                  </li>
+                  <li>
+                    <a href="#">ESPORTS</a>
+                  </li>
+                  <li>
+                    <a href="#">MAIS</a>
+                  </li>
+                </ul>
 
-            <div>
-              <div></div>
-              <a href="#">
-                <img src="" alt="" />
-              </a>
-              <button className={styles.headerButton}>Jogue agora</button>
-            </div>
-          </motion.div>
+                <button className={styles.headerButton}>Jogue agora</button>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </div>
