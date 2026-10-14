@@ -3,6 +3,7 @@
   top: 0;
   left: 0;
   z-index: 10;
+  background-color: #111111;
 }
 
 .headerContent {
@@ -215,6 +216,7 @@
     gap: 8px;
     position: static;
     background-color: transparent;
+    box-shadow: none;
     overflow: hidden;
   }
 
