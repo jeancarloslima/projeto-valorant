@@ -70,7 +70,7 @@ export default function AgentPage() {
             HABILIDADES ESPECIAIS
           </h2>
           <ul className={styles.abilitiesList}>
-            {agent.abilities.map((abl) => (
+            {agent.abilities.slice(0, 4).map((abl) => (
               <li className={styles.abilityItem}>
                 <img
                   className={styles.abilityIcon}
