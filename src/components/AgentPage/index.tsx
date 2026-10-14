@@ -4,10 +4,12 @@ import type { Agent } from "../../types/types";
 import Header from "../assets/Header";
 import { motion } from "framer-motion";
 import Footer from "../assets/Footer";
+import { useState } from "react";
 
 export default function AgentPage() {
   const location = useLocation();
   const agent = location.state?.agent as Agent;
+  const [abilitySelected, setAbilitySelected] = useState(agent?.abilities[0]);
 
   if (!agent) {
     return <Navigate to="/" replace />;
@@ -70,8 +72,8 @@ export default function AgentPage() {
             HABILIDADES ESPECIAIS
           </h2>
           <ul className={styles.abilitiesList}>
-            {agent.abilities.slice(0, 4).map((abl) => (
-              <li className={styles.abilityItem}>
+            {agent.abilities.slice(0, 4).map((abl, index) => (
+              <li className={styles.abilityItem} onClick={() => setAbilitySelected(agent.abilities[index])}>
                 <img
                   className={styles.abilityIcon}
                   src={abl.displayIcon ? abl.displayIcon : ""}
@@ -93,10 +95,10 @@ export default function AgentPage() {
             alt={`Vídeo da habilidade ${agent.abilities[0].displayName}`}
           />
           <h3 className={styles.abilityTitle}>
-            {agent.abilities[0].displayName}
+            {abilitySelected.displayName}
           </h3>
           <p className={styles.abilityDescription}>
-            {agent.abilities[0].description}
+            {abilitySelected.description}
           </p>
         </motion.div>
       </section>
