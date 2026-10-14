@@ -73,7 +73,7 @@ export default function AgentPage() {
           </h2>
           <ul className={styles.abilitiesList}>
             {agent.abilities.slice(0, 4).map((abl, index) => (
-              <li className={styles.abilityItem} onClick={() => setAbilitySelected(agent.abilities[index])}>
+              <li className={`${styles.abilityItem} ${abilitySelected === abl ? styles.abilityItemActive : ''}`} onClick={() => setAbilitySelected(agent.abilities[index])}>
                 <img
                   className={styles.abilityIcon}
                   src={abl.displayIcon ? abl.displayIcon : ""}
