@@ -8,7 +8,9 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const menuActiveTabs = ["Informações do jogo", "Mídia", "Notícias", "Suporte", "Social", "Esports", "Comunidade", "Duelo: Anscesão", "Abater ou morrer"];
-  const menuSpareTabs = [];
+  const menuSpareTabs = [""];
+
+  console.log([menuActiveTabs, menuSpareTabs]);
 
   useEffect(() => {
     const handleResize = () => {
