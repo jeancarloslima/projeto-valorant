@@ -7,6 +7,8 @@ import { FaSearch } from "react-icons/fa";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const menuActiveTabs = ["Informações do jogo", "Mídia", "Notícias", "Suporte", "Social", "Esports", "Comunidade", "Duelo: Anscesão", "Abater ou morrer"];
+  const menuSpareTabs = [];
 
   useEffect(() => {
     const handleResize = () => {
