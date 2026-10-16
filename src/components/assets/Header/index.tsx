@@ -7,7 +7,17 @@ import { FaSearch } from "react-icons/fa";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
-  const menuActiveTabs = ["Informações do jogo", "Mídia", "Notícias", "Suporte", "Social", "Esports", "Comunidade", "Duelo: Anscesão", "Abater ou morrer"];
+  const menuActiveTabs = [
+    "Informações do jogo",
+    "Mídia",
+    "Notícias",
+    "Suporte",
+    "Social",
+    "Esports",
+    "Comunidade",
+    "Duelo: Anscesão",
+    "Abater ou morrer",
+  ];
   const menuSpareTabs = [""];
 
   console.log([menuActiveTabs, menuSpareTabs]);
@@ -55,7 +65,7 @@ export default function Header() {
             {isMenuOpen && (
               <motion.div
                 className={styles.headerLinksContainer}
-                initial={ isDesktop ? '' : { x: "100%" }}
+                initial={isDesktop ? "" : { x: "100%" }}
                 animate={{ x: 0 }}
                 exit={{ x: "100%" }}
                 transition={{ type: "spring", bounce: 0, duration: 0.4 }}
@@ -75,30 +85,14 @@ export default function Header() {
                 </div>
 
                 <ul className={styles.headerList}>
-                  <li>
-                    <a href="#">
-                      <p>INFORMAÇÕES DO JOGO</p>
-                      <span></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <p>MÍDIA</p>
-                      <span></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <p>NOTÍCIAS</p>
-                      <span></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <p>MAIS</p>
-                      <span></span>
-                    </a>
-                  </li>
+                  {menuActiveTabs.map((tab) => (
+                    <li>
+                      <a href="#">
+                        <p>{tab}</p>
+                        <span></span>
+                      </a>
+                    </li>
+                  ))}
                 </ul>
 
                 <button className={styles.headerButton}>Jogue agora</button>
