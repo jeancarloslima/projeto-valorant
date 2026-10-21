@@ -107,7 +107,7 @@ export default function Header() {
                       </a>
                     </li>
                   ))}
-                  {window.innerWidth <= 1800 && (
+                  {(window.innerWidth >= 1024 && window.innerWidth <= 1800) && (
                     <li>
                       <a href="#">
                         <p>mais</p>
