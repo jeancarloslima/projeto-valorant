@@ -7,7 +7,7 @@ import { FaSearch } from "react-icons/fa";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
-  const menuActiveTabs = [
+  const [menuActiveTabs, setMenuActiveTabs] = useState([
     "Informações do jogo",
     "Mídia",
     "Notícias",
@@ -17,8 +17,8 @@ export default function Header() {
     "Comunidade",
     "Duelo: Anscesão",
     "Abater ou morrer",
-  ];
-  const menuSpareTabs = [""];
+  ]);
+  const [menuSpareTabs, setMenuSpareTabs] = useState<string[]>([]);
 
   console.log([menuActiveTabs, menuSpareTabs]);
 
@@ -28,6 +28,20 @@ export default function Header() {
 
       if (window.innerWidth >= 1024) {
         setIsMenuOpen(true);
+      }
+
+      if (window.innerWidth >= 1024 && window.innerWidth < 1800) {
+        // 1285
+        // 77 - 226
+        // -190
+        const itemsQuantity = Math.floor((window.innerWidth - 460) / 160);
+        const itemsToMove = menuActiveTabs.slice(
+          -(menuActiveTabs.length - itemsQuantity),
+        );
+        const itemsToMaintain = menuActiveTabs.slice(0, itemsQuantity);
+
+        setMenuSpareTabs(itemsToMove);
+        setMenuActiveTabs(itemsToMaintain);
       }
     };
 
@@ -93,6 +107,14 @@ export default function Header() {
                       </a>
                     </li>
                   ))}
+                  {window.innerWidth <= 1800 && (
+                    <li>
+                      <a href="#">
+                        <p>mais</p>
+                        <span></span>
+                      </a>
+                    </li>
+                  )}
                 </ul>
 
                 <button className={styles.headerButton}>Jogue agora</button>
