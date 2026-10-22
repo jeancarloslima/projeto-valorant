@@ -8,19 +8,31 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const [menuActiveTabs, setMenuActiveTabs] = useState([
-    "Informações do jogo",
-    "Mídia",
-    "Notícias",
-    "Suporte",
-    "Social",
-    "Esports",
-    "Comunidade",
-    "Duelo: Anscesão",
-    "Abater ou morrer",
+    {
+      title: "Informações do jogo",
+      items: ["Agentes", "Mapas", "Arsenal", "Premier"],
+    },
+    { title: "Mídia", items: [] },
+    { title: "Notícias", items: [] },
+    {
+      title: "Suporte",
+      items: ["Requisitos", "Suporte", "Código Da Comunidade"],
+    },
+    { title: "Social", items: ["Facebook", "Youtube", "Instagram", "X"] },
+    { title: "Esports", items: [] },
+    {
+      title: "Comunidade",
+      items: [
+        "Jogue Torneios De Comunidade",
+        "Organize Torneio De Comunidade",
+        "Ranking Torneios De Comunidade",
+        "Suporte Torneios De Comunidade",
+      ],
+    },
+    { title: "Duelo: Anscesão", items: [] },
+    { title: "Abater ou morrer", items: [] },
   ]);
   const [menuSpareTabs, setMenuSpareTabs] = useState<string[]>([]);
-
-  console.log([menuActiveTabs, menuSpareTabs]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -100,19 +112,43 @@ export default function Header() {
 
                 <ul className={styles.headerList}>
                   {menuActiveTabs.map((tab) => (
-                    <li>
-                      <a href="#">
-                        <p>{tab}</p>
+                    <li key={tab.title} className={styles.headerItem}>
+                      <a href="#" className={styles.headerLink}>
+                        <p>{tab.title}</p>
                         <span></span>
                       </a>
+
+                      {tab.items.length > 0 && (
+                        <ul className={styles.listWithinItem}>
+                          {tab.items.map((item) => (
+                            <li className={styles.headerWithinItem}>
+                              <a href="#" className={styles.headerWithinLink}>
+                                <p>{item}</p>
+                                <span></span>
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </li>
                   ))}
-                  {(window.innerWidth >= 1024 && window.innerWidth <= 1800) && (
-                    <li>
-                      <a href="#">
-                        <p>mais</p>
+                  {window.innerWidth >= 1024 && window.innerWidth <= 1800 && (
+                    <li key="Mais" className={styles.headerItem}>
+                      <a href="#" className={styles.headerLink}>
+                        <p>"Mais</p>
                         <span></span>
                       </a>
+
+                      <ul className={styles.listWithinItem}>
+                        {menuSpareTabs.map((spareTab) => (
+                          <li className={styles.headerWithinItem}>
+                            <a href="#" className={styles.headerWithinLink}>
+                              <p></p>
+                              <span></span>
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
                     </li>
                   )}
                 </ul>

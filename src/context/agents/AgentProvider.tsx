@@ -15,7 +15,6 @@ export const AgentsProvider = ({ children }: { children: ReactNode }) => {
 
     try {
       const data = await apiService.getAll();
-      console.log(data);
       
       setAgents(data);
     } catch (err) {
