@@ -37,3 +37,8 @@ export interface AgentsContextType {
     loadAgents: () => Promise<void>;
     getAgent: (uuid: string) => void;
 }
+
+export interface MenuTab {
+    title: string;
+    items: string[];
+}

@@ -3,11 +3,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import styles from "./Header.module.css";
 import { FaXmark } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
+import type { MenuTab } from "../../../types/types";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
-  const [menuActiveTabs, setMenuActiveTabs] = useState([
+  const [menuActiveTabs, setMenuActiveTabs] = useState<MenuTab[]>([
     {
       title: "Informações do jogo",
       items: ["Agentes", "Mapas", "Arsenal", "Premier"],
@@ -32,7 +33,7 @@ export default function Header() {
     { title: "Duelo: Anscesão", items: [] },
     { title: "Abater ou morrer", items: [] },
   ]);
-  const [menuSpareTabs, setMenuSpareTabs] = useState<object[]>([]);
+  const [menuSpareTabs, setMenuSpareTabs] = useState<MenuTab[]>([]);
 
   useEffect(() => {
     const handleResize = () => {
