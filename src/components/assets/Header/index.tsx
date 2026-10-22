@@ -114,8 +114,7 @@ export default function Header() {
                   {menuActiveTabs.map((tab) => (
                     <li key={tab.title} className={styles.headerItem}>
                       <a href="#" className={styles.headerLink}>
-                        <p>{tab.title}</p>
-                        <span></span>
+                        <p className={styles.headerParagraph}>{tab.title}</p>
                       </a>
 
                       {tab.items.length > 0 && (
@@ -123,8 +122,7 @@ export default function Header() {
                           {tab.items.map((item) => (
                             <li className={styles.headerWithinItem}>
                               <a href="#" className={styles.headerWithinLink}>
-                                <p>{item}</p>
-                                <span></span>
+                                <p className={styles.headerWithinParagraph}>{item}</p>
                               </a>
                             </li>
                           ))}
@@ -135,8 +133,7 @@ export default function Header() {
                   {window.innerWidth >= 1024 && window.innerWidth <= 1800 && (
                     <li key="Mais" className={styles.headerItem}>
                       <a href="#" className={styles.headerLink}>
-                        <p>"Mais</p>
-                        <span></span>
+                        <p className={styles.headerParagraph}>Mais</p>
                       </a>
 
                       <ul className={styles.listWithinItem}>

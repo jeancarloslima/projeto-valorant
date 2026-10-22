@@ -146,30 +146,41 @@
   position: relative;
 }
 
-.headerItem:hover {
-  background-color: #272727;
+.headerItem:hover .headerLink {
+  color: #ff4655;
 }
 
 .headerLink {
   display: block;
   width: 100%;
   height: 48px;
-  padding: 12px 1rem;
+  padding: 12px 0;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 1.5px;
+  border-bottom: 4px solid transparent;
 }
 
-.headerItem:hover .headerLink {
-  color: #ff4655;
+.headerLink:hover {
+  border-bottom-color: #ff3a45;
+}
+
+.headerLink:hover .headerParagraph {
+  background-color: #272727;
+}
+
+.headerParagraph {
+  padding: 7.5px 16px;
+  border-radius: 8px;
 }
 
 .listWithinItem {
+  display: none;
   width: 200px;
   padding: 1.5rem;
   position: absolute;
-  top: 54px;
+  top: 66px;
   left: 0;
   background-color: #292929;
   border-top: 4px solid #ff3a45;
@@ -221,6 +232,7 @@
     height: auto;
     max-width: 100%;
     min-height: auto;
+    padding: 0 1.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -252,28 +264,18 @@
 
   .headerItem {
     width: auto;
-    height: 100%;
+    height: 70px;
+    margin: 6px 0;
   }
 
   .headerLink {
+    display: flex;
+    align-items: center;
+    justify-content: start;
     width: auto;
+    height: 100%;
     letter-spacing: 1px;
     font-size: 14px;
-  }
-
-  .headerLink span {
-    display: none;
-    width: 100%;
-    height: 4px;
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    background-color: #ff3a45;
-    border-radius: 8px;
-  }
-
-  .headerItem:hover .headerLink span {
-    display: inline;
   }
 
   .headerButton {
