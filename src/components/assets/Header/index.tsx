@@ -32,7 +32,7 @@ export default function Header() {
     { title: "Duelo: Anscesão", items: [] },
     { title: "Abater ou morrer", items: [] },
   ]);
-  const [menuSpareTabs, setMenuSpareTabs] = useState<string[]>([]);
+  const [menuSpareTabs, setMenuSpareTabs] = useState<object[]>([]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -118,7 +118,7 @@ export default function Header() {
                       </a>
 
                       {tab.items.length > 0 && (
-                        <ul className={styles.listWithinItem}>
+                        <ul className={styles.listWithinList}>
                           {tab.items.map((item) => (
                             <li className={styles.headerWithinItem}>
                               <a href="#" className={styles.headerWithinLink}>
@@ -136,12 +136,11 @@ export default function Header() {
                         <p className={styles.headerParagraph}>Mais</p>
                       </a>
 
-                      <ul className={styles.listWithinItem}>
+                      <ul className={styles.listWithinList}>
                         {menuSpareTabs.map((spareTab) => (
-                          <li className={styles.headerWithinItem}>
+                          <li key={spareTab.title} className={styles.headerWithinItem}>
                             <a href="#" className={styles.headerWithinLink}>
-                              <p></p>
-                              <span></span>
+                              <p className={styles.headerWithinParagraph}>{spareTab.title}</p>
                             </a>
                           </li>
                         ))}
