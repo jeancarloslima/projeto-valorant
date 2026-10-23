@@ -175,8 +175,15 @@
 }
 
 .headerParagraph {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
   padding: 7.5px 16px;
   border-radius: 8px;
+}
+
+.headerParagraph img {
+  width: 20px;
 }
 
 .listWithinList {

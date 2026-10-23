@@ -115,7 +115,15 @@ export default function Header() {
                   {menuActiveTabs.map((tab) => (
                     <li key={tab.title} className={styles.headerItem}>
                       <a href="#" className={styles.headerLink}>
-                        <p className={styles.headerParagraph}>{tab.title}</p>
+                        <p className={styles.headerParagraph}>
+                          {tab.title}
+                          {tab.items.length > 0 && (
+                            <img
+                              src="/caret-down-solid-full.svg"
+                              alt="Logo Valorant"
+                            />
+                          )}
+                        </p>
                       </a>
 
                       {tab.items.length > 0 && (
@@ -123,7 +131,9 @@ export default function Header() {
                           {tab.items.map((item) => (
                             <li className={styles.headerWithinItem}>
                               <a href="#" className={styles.headerWithinLink}>
-                                <p className={styles.headerWithinParagraph}>{item}</p>
+                                <p className={styles.headerWithinParagraph}>
+                                  {item}
+                                </p>
                               </a>
                             </li>
                           ))}
@@ -134,14 +144,25 @@ export default function Header() {
                   {window.innerWidth >= 1024 && window.innerWidth <= 1800 && (
                     <li key="Mais" className={styles.headerItem}>
                       <a href="#" className={styles.headerLink}>
-                        <p className={styles.headerParagraph}>Mais</p>
+                        <p className={styles.headerParagraph}>
+                          Mais
+                          <img
+                            src="/caret-down-solid-full.svg"
+                            alt="Logo Valorant"
+                          />
+                        </p>
                       </a>
 
                       <ul className={styles.listWithinList}>
                         {menuSpareTabs.map((spareTab) => (
-                          <li key={spareTab.title} className={styles.headerWithinItem}>
+                          <li
+                            key={spareTab.title}
+                            className={styles.headerWithinItem}
+                          >
                             <a href="#" className={styles.headerWithinLink}>
-                              <p className={styles.headerWithinParagraph}>{spareTab.title}</p>
+                              <p className={styles.headerWithinParagraph}>
+                                {spareTab.title}
+                              </p>
                             </a>
                           </li>
                         ))}
