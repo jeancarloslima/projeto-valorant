@@ -47,7 +47,7 @@ export default function Header() {
         // 1285
         // 77 - 226
         // -190
-        const itemsQuantity = Math.floor((window.innerWidth - 460) / 160);
+        const itemsQuantity = Math.floor((window.innerWidth - 475) / 190);
         const itemsToMove = menuActiveTabs.slice(
           -(menuActiveTabs.length - itemsQuantity),
         );
