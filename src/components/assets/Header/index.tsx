@@ -7,6 +7,7 @@ import type { MenuTab } from "../../../types/types";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [subMenuOpen, setsubMenuOpen] = useState("");
   const [isDesktop, setIsDesktop] = useState(false);
   const [menuActiveTabs, setMenuActiveTabs] = useState<MenuTab[]>([
     {
@@ -113,7 +114,7 @@ export default function Header() {
 
                 <ul className={styles.headerList}>
                   {menuActiveTabs.map((tab) => (
-                    <li key={tab.title} className={styles.headerItem}>
+                    <li key={tab.title} onClick={() => setsubMenuOpen(tab.title)} className={styles.headerItem}>
                       <a href="#" className={styles.headerLink}>
                         <p className={styles.headerParagraph}>
                           {tab.title}
@@ -127,7 +128,7 @@ export default function Header() {
                       </a>
 
                       {tab.items.length > 0 && (
-                        <ul className={styles.listWithinList}>
+                        <ul className={`${styles.headerWithinList} ${tab.title === subMenuOpen ? 'headerWithinListActive' : ''}`}>
                           {tab.items.map((item) => (
                             <li className={styles.headerWithinItem}>
                               <a href="#" className={styles.headerWithinLink}>
