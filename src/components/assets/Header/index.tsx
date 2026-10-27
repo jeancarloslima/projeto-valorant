@@ -128,7 +128,7 @@ export default function Header() {
                       </a>
 
                       {tab.items.length > 0 && (
-                        <ul className={`${styles.headerWithinList} ${tab.title === subMenuOpen ? 'headerWithinListActive' : ''}`}>
+                        <ul className={`${styles.headerWithinList} ${tab.title === subMenuOpen ? styles.active : ''}`}>
                           {tab.items.map((item) => (
                             <li className={styles.headerWithinItem}>
                               <a href="#" className={styles.headerWithinLink}>

@@ -183,10 +183,10 @@
   display: none;
   flex-direction: column;
   gap: 0.7rem;
-  padding-top: .7rem;
+  padding-top: 0.7rem;
 }
 
-.headerWithinListActive {
+.headerWithinList.active {
   display: flex;
 }
 
