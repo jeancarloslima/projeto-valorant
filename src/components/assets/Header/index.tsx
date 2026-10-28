@@ -117,9 +117,9 @@ export default function Header() {
                     <li
                       key={tab.title}
                       onClick={() => {
-                        if (!(subMenuOpen === tab.title)) {
+                        if (!isDesktop && !(subMenuOpen === tab.title)) {
                           setsubMenuOpen(tab.title);
-                        } else {
+                        } else if (!isDesktop) {
                           setsubMenuOpen("");
                         }
                       }}
@@ -132,7 +132,7 @@ export default function Header() {
                             <img
                               src="/caret-down-solid-full.svg"
                               alt="Expandir"
-                              className={`${styles.openSubMenuIcon} ${tab.title === subMenuOpen ? styles.active : ""}`}
+                              className={`${styles.openSubMenuIcon} ${tab.title === subMenuOpen && !isDesktop ? styles.active : ""}`}
                             />
                           )}
                         </p>
@@ -140,7 +140,7 @@ export default function Header() {
 
                       {tab.items.length > 0 && (
                         <ul
-                          className={`${styles.headerWithinList} ${tab.title === subMenuOpen ? styles.active : ""}`}
+                          className={`${styles.headerWithinList} ${tab.title === subMenuOpen && !isDesktop ? styles.active : ""}`}
                         >
                           {tab.items.map((item) => (
                             <li className={styles.headerWithinItem}>
