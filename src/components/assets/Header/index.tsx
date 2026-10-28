@@ -114,7 +114,17 @@ export default function Header() {
 
                 <ul className={styles.headerList}>
                   {menuActiveTabs.map((tab) => (
-                    <li key={tab.title} onClick={() => setsubMenuOpen(tab.title)} className={styles.headerItem}>
+                    <li
+                      key={tab.title}
+                      onClick={() => {
+                        if (!(subMenuOpen === tab.title)) {
+                          setsubMenuOpen(tab.title);
+                        } else {
+                          setsubMenuOpen("");
+                        }
+                      }}
+                      className={styles.headerItem}
+                    >
                       <a href="#" className={styles.headerLink}>
                         <p className={styles.headerParagraph}>
                           {tab.title}
@@ -128,7 +138,9 @@ export default function Header() {
                       </a>
 
                       {tab.items.length > 0 && (
-                        <ul className={`${styles.headerWithinList} ${tab.title === subMenuOpen ? styles.active : ''}`}>
+                        <ul
+                          className={`${styles.headerWithinList} ${tab.title === subMenuOpen ? styles.active : ""}`}
+                        >
                           {tab.items.map((item) => (
                             <li className={styles.headerWithinItem}>
                               <a href="#" className={styles.headerWithinLink}>
