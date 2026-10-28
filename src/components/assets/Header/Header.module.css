@@ -174,8 +174,13 @@
   justify-content: space-between;
 }
 
-.headerParagraph img {
+.openSubMenuIcon {
   width: 25px;
+  transition: .3s;
+}
+
+.openSubMenuIcon.active {
+  transform: rotate(180deg);
 }
 
 .headerWithinList {

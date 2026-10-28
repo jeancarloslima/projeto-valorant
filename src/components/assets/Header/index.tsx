@@ -131,7 +131,8 @@ export default function Header() {
                           {tab.items.length > 0 && (
                             <img
                               src="/caret-down-solid-full.svg"
-                              alt="Logo Valorant"
+                              alt="Expandir"
+                              className={`${styles.openSubMenuIcon} ${tab.title === subMenuOpen ? styles.active : ""}`}
                             />
                           )}
                         </p>
