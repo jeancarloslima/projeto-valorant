@@ -176,7 +176,7 @@
 
 .openSubMenuIcon {
   width: 25px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .openSubMenuIcon.active {
@@ -307,8 +307,18 @@
     justify-content: start;
     width: auto;
     height: 100%;
+    padding: 0;
     letter-spacing: 1px;
     font-size: 14px;
+    border-radius: 0;
+  }
+
+  .headerLink:hover {
+    background-color: transparent;
+  }
+
+  .headerLink:hover .headerParagraph {
+    background-color: #272727;
   }
 
   .headerLink:hover {
@@ -339,7 +349,24 @@
   }
 
   .headerWithinItem {
+    height: auto;
+    padding: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    transition: .3s;
+  }
+
+  .headerWithinItem:hover {
+    background-color: #484848;
+  }
+
+  .headerWithinLink {
+    width: auto;
+    height: auto;
     padding: 0.5rem 1rem;
+    transition: .3s;
   }
 
   .headerButton {

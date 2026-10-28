@@ -167,7 +167,7 @@ export default function Header() {
                         </p>
                       </a>
 
-                      <ul className={styles.listWithinList}>
+                      <ul className={styles.headerWithinList}>
                         {menuSpareTabs.map((spareTab) => (
                           <li
                             key={spareTab.title}
