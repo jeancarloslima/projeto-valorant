@@ -83,6 +83,7 @@ export default function Header() {
           <div className={styles.menuHamburguer}>
             <button
               onClick={() => setIsMenuOpen(true)}
+              aria-label="Abrir menu"
               className={styles.menuHamburguerButton}
             >
               <span className={styles.menuHamburguerBar}></span>
@@ -102,6 +103,7 @@ export default function Header() {
                   <img src="/valorant-logo.svg" alt="Logo Valorant" />
                   <button
                     onClick={() => setIsMenuOpen(false)}
+                    aria-label="Fechar menu"
                     className={styles.closeButton}
                   >
                     <FaXmark color="#FFF" size={24} />
