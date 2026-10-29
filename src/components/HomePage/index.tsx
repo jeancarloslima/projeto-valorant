@@ -9,7 +9,9 @@ import Footer from "../assets/Footer";
 export default function HomePage() {
   const { agents, isLoading, error, loadAgents } = useAgents();
   const navigate = useNavigate();
-  const sortedAgents = [...agents].sort((a, b) => a.displayName.localeCompare(b.displayName, 'pt-BR'));
+  const sortedAgents = [...agents].sort((a, b) =>
+    a.displayName.localeCompare(b.displayName, "pt-BR"),
+  );
 
   useEffect(() => {
     if (agents.length === 0) {
@@ -17,17 +19,39 @@ export default function HomePage() {
     }
   }, [agents.length, loadAgents]);
 
+  console.log(agents);
+
   if (isLoading)
     return (
-      <p style={{ color: "#ece8e1", textAlign: "center", fontSize: "2rem" }}>
-        Carregando agentes...
-      </p>
+      <div
+        style={{
+          width: "100%",
+          height: "100dvh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <p style={{ color: "#ece8e1", textAlign: "center", fontSize: "2rem" }}>
+          Carregando agentes...
+        </p>
+      </div>
     );
   if (error)
     return (
-      <p style={{ color: "#D55B6A", textAlign: "center", fontSize: "2rem" }}>
-        Erro: {error}
-      </p>
+      <div
+        style={{
+          width: "100%",
+          height: "100dvh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <p style={{ color: "#ece8e1", textAlign: "center", fontSize: "2rem" }}>
+          Carregando agentes...
+        </p>
+      </div>
     );
 
   return (
