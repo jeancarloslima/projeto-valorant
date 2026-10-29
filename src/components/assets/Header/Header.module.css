@@ -353,7 +353,7 @@
     padding: 0;
     font-weight: 500;
     font-size: 16px;
-    line-height: 16px;
+    line-height: 1.5rem;
     letter-spacing: 1px;
     transition: .3s;
   }
